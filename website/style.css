@@ -104,28 +104,44 @@ th, td {
     margin: 40px auto;
 }
 
-/* 5. CODE FOR SEPARATE IMAGES */
+/* =======================================
+   5. SEPARATE IMAGE STYLING RULES
+   ======================================= */
 
 /* General settings for ALL table images */
 table tbody img {
-    cursor: pointer; /* Makes the cursor turn into a pointer hand on hover */
-    transition: transform 0.2s; /* Adds a smooth animation transition */
-    border-radius: 8px; /* Smooths the edges of the images slightly */
+    cursor: pointer;          /* Makes the cursor turn into a pointer hand on hover */
+    border-radius: 8px;       /* Gives soft rounded corners to images */
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth zoom animation setup */
 }
 
-/* Universal hover effect code for all images */
+/* When a user hovers over ANY image, make it grow larger */
 table tbody img:hover {
-    transform: scale(1.1); /* Slightly pops the image out on hover */
+    transform: scale(1.15);   /* Increases size by 15% smoothly */
 }
 
-/* CSS rule for the Gold Dragon specifically */
+/* Target individual separate image IDs to give them unique border glow effects */
 #img-gold {
-    border: 3px solid gold;
-    box-shadow: 0 0 10px gold;
+    border: 3px solid #FFD700;
+    box-shadow: 0 0 10px #FFD700;
 }
 
-/* CSS rule for the Red Dragon specifically */
+#img-silver {
+    border: 3px solid #C0C0C0;
+    box-shadow: 0 0 10px #C0C0C0;
+}
+
 #img-red {
-    border: 3px solid red;
-    box-shadow: 0 0 10px red;
+    border: 3px solid #FF0000;
+    box-shadow: 0 0 10px #FF0000;
+}
+
+#img-blue {
+    border: 3px solid #0000FF;
+    box-shadow: 0 0 10px #0000FF;
+}
+
+#img-emerald {
+    border: 3px solid #50C878;
+    box-shadow: 0 0 10px #50C878;
 }
