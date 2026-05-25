@@ -1,0 +1,26 @@
+/* 1. Reset Body Spacing */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* 2. Header Box (Full Width) */
+#header-box {
+    background-color: lightblue;
+    width: 100%;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 52px;
+    font-family: courier, monospace;
+    text-align: center;
+    color: black;
+    margin: 0;
+}
+
+/* ... include all the rest of your CSS rules here ... */
