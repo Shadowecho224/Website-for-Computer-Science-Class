@@ -22,12 +22,14 @@ h1 {
     color: black;
     margin: 0;
 }
-
-/* ... include all the rest of your CSS rules here ... */
-
-/* This custom code will ONLY apply to the gold dragon image */
-#gold-dragon-pic {
+/* This code only affects the Brass Dragon image */
+#brass-dragon-img {
     border: 3px solid gold;
-    box-shadow: 0 0 10px gold;
-    filter: brightness(1.2);
+    filter: drop-shadow(0px 0px 10px yellow);
 }
+
+/* This code only affects the Copper Dragon image */
+#copper-dragon-img {
+    border: 3px solid #b87333;
+}
+
