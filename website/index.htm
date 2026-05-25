@@ -272,12 +272,10 @@
 
 
 <script>
-    // NEW FUNCTION: This code script fires specifically whenever an image is clicked!
     function clickDragon(dragonName, attackType) {
         alert(dragonName + " unleashes a devastating breath weapon attack of: " + attackType + "!");
     }
 
-    // Handles changing between the website tabs/panels
     function showPanel(panelId) {
         var panels = document.getElementsByClassName("panel");
         for (var i = 0; i < panels.length; i++) {
@@ -285,7 +283,6 @@
         }
         document.getElementById(panelId).style.display = "block";
         
-        // Hide standalone main-page elements when navigating away
         if (panelId !== 'dragons') {
             document.getElementById("dragonTableContainer").style.display = "none";
             document.getElementById("alignmentsContainer").style.display = "none";
@@ -297,13 +294,11 @@
         }
     }
 
-    // Toggles your Scratch iframe on and off
     function toggleScratchGame() {
         var scratchBox = document.getElementById("scratchContainer");
         var flappyBox = document.getElementById("FlappyContainer");
         var dancerBox = document.getElementById("DancerContainer");
         
-        // Hide the other games
         flappyBox.style.display = "none";
         dancerBox.style.display = "none";
         
@@ -314,13 +309,11 @@
         }
     }
 
-    // Toggles your Code.org Flappy Bird iframe on and off
     function toggleFlappybirdGame() {
         var scratchBox = document.getElementById("scratchContainer");
         var flappyBox = document.getElementById("FlappyContainer");
         var dancerBox = document.getElementById("DancerContainer");
         
-        // Hide the other games
         scratchBox.style.display = "none";
         dancerBox.style.display = "none";
         
@@ -331,13 +324,11 @@
         }
     }
 
-    // Toggles your Code.org Dancer iframe on and off
     function toggleDancerGame() {
         var scratchBox = document.getElementById("scratchContainer");
         var flappyBox = document.getElementById("FlappyContainer");
         var dancerBox = document.getElementById("DancerContainer");
            
-        // Hide the other games
         scratchBox.style.display = "none";  
         flappyBox.style.display = "none";
 
@@ -348,7 +339,6 @@
         }
     }
 
-    // Toggles the Dragon Table open and closed
     function toggleTableofDragons() {
         var tableContainer = document.getElementById("dragonTableContainer");
         if (tableContainer.style.display === "none" || tableContainer.style.display === "") {
@@ -358,7 +348,6 @@
         }
     }
 
-    // Toggles the Alignments list layout open and closed
     function toggleAlignments() {
         var alignmentsBox = document.getElementById("alignmentsContainer");
         if (alignmentsBox.style.display === "none" || alignmentsBox.style.display === "") {
