@@ -193,121 +193,109 @@
 </div>
 
 <div id="dragonTableContainer" class="main-page-content">
-    <table style="width:100%; background-color:black;">
+    <table style="width:100%;">
         <thead>
             <tr>
-                <th style="color:white; font-size:18px; border: 2px solid black;"><i><b>Image of dragon</b></i></th>
-                <th style="color:white; font-size:18px; border: 2px solid black;"><i><b>Dragon Name</b></i></th>
-                <th style="color:white; font-size:18px; border: 2px solid black;"><i><b>Type of Dragon (Chromatic/Gem/Metallic)</b></i></th>
+                <th><i>Image of dragon</i></th>
+                <th><i>Dragon Name</i></th>
+                <th><i>Type of Dragon (Chromatic/Gem/Metallic)</i></th>
             </tr>
         </thead>
         <tbody>
-<tr style="color:#AE8A59; background-color:#4C2F1D; font-size:15px;">
-    <td style="border: 2px solid #864623; text-align: center;">
-        <img src="brass-metallic-dragon.png" width="100" height="100" alt="Brass" onclick="clickDragon('Brass')" style="cursor: pointer;">
-    </td>
-    <td style="border: 2px solid #864623; text-align: center;">Brass Dragon</td>
-    <td style="border: 2px solid #864623; text-align: center;">Metallic Dragon</td>
-</tr>
-
-<tr>
-    <td style="text-align: center;">
-        <img id="brass-dragon-img" src="images/brass-metallic-dragon.png" width="100" height="100" alt="Brass">
-    </td>
-    <td>Brass Dragon</td>
-    <td>Metallic Dragon</td>
-</tr>
-<tr>
-    <td style="text-align: center;">
-        <img id="copper-dragon-img" src="images/copper-metallic-dragon.png" width="100" height="100" alt="Copper">
-    </td>
-    <td>Copper Dragon</td>
-    <td>Metallic Dragon</td>
-</tr>
-            <tr style="color:#EDD183; background-color:#583D29; font-size:15px;">
-                <td style="border: 2px solid #A08260; text-align: center;"><img src="bronze-metallic-dragon.png" width="100" height="100" alt="Bronze"></td>
-                <td style="border: 2px solid #A08260; text-align: center;">Bronze Dragon</td>
-                <td style="border: 2px solid #A08260; text-align: center;">Metallic Dragon</td>
+            <tr id="brass-row">
+                <td><img src="images/brass-metallic-dragon.png" width="100" height="100" alt="Brass"></td>
+                <td>Brass Dragon</td>
+                <td>Metallic Dragon</td>
             </tr>
-            <tr style="color:#F0D94C; background-color:#AD6124; font-size:15px;">
-                <td style="border: 2px solid #BA9B34; text-align: center;"><img src="gold-metallic-dragon.png" width="100" height="100" alt="Gold"></td>
-                <td style="border: 2px solid #BA9B34; text-align: center;">Gold Dragon</td>
-                <td style="border: 2px solid #BA9B34; text-align: center;">Metallic Neutral</td>
+            <tr id="copper-row">
+                <td><img src="images/copper-metallic-dragon.png" width="100" height="100" alt="Copper"></td>
+                <td>Copper Dragon</td>
+                <td>Metallic Dragon</td>
             </tr>
-            <tr style="color:#E1E4C1; background-color:#E69739; font-size:15px;">
-                <td style="border: 2px solid #FFD28F; text-align: center;"><img src="topaz-dragon.png" width="100" height="100" alt="Topaz"></td>
-                <td style="border: 2px solid #FFD28F; text-align: center;">Topaz Dragon</td>
-                <td style="border: 2px solid #FFD28F; text-align: center;">Gem Dragon</td>
+            <tr id="bronze-row">
+                <td><img src="images/bronze-metallic-dragon.png" width="100" height="100" alt="Bronze"></td>
+                <td>Bronze Dragon</td>
+                <td>Metallic Dragon</td>
             </tr>
-            <tr style="color:#CDD0D3; background-color:#707E89; font-size:15px;">
-                <td style="border: 2px solid #B3B3AE; text-align: center;"><img src="silver-metallic-dragon.png" width="100" height="100" alt="Silver"></td>
-                <td style="border: 2px solid #B3B3AE; text-align: center;">Silver Dragon</td>
-                <td style="border: 2px solid #B3B3AE; text-align: center;">Metallic Dragon</td>
+            <tr id="gold-row">
+                <td><img src="images/gold-metallic-dragon.png" width="100" height="100" alt="Gold"></td>
+                <td>Gold Dragon</td>
+                <td>Metallic Dragon</td>
             </tr>
-            <tr style="color:#999A5A; background-color:#49623C; font-size:15px;">
-                <td style="border: 2px solid #659D5D; text-align: center;"><img src="emerald-dragon.png" width="100" height="100" alt="Emerald"></td>
-                <td style="border: 2px solid #659D5D; text-align: center;">Emerald Dragon</td>
-                <td style="border: 2px solid #659D5D; text-align: center;">Gem Dragon</td>
+            <tr id="topaz-row">
+                <td><img src="images/topaz-dragon.png" width="100" height="100" alt="Topaz"></td>
+                <td>Topaz Dragon</td>
+                <td>Gem Dragon</td>
             </tr>
-            <tr style="color:#AA9470; background-color:#402C0E; font-size:15px;">
-                <td style="border: 2px solid #735830; text-align: center;"><img src="crystal-dragon.png" width="100" height="100" alt="Crystal"></td>
-                <td style="border: 2px solid #735830; text-align: center;">Crystal Dragon</td>
-                <td style="border: 2px solid #735830; text-align: center;">Gem Dragon</td>
+            <tr id="silver-row">
+                <td><img src="images/silver-metallic-dragon.png" width="100" height="100" alt="Silver"></td>
+                <td>Silver Dragon</td>
+                <td>Metallic Dragon</td>
             </tr>
-            <tr style="color:#659CC6; background-color:#162148; font-size:15px;">
-                <td style="border: 2px solid #0A5D93; text-align: center;"><img src="sapphire-dragon.png" width="100" height="100" alt="Sapphire"></td>
-                <td style="border: 2px solid #0A5D93; text-align: center;">Sapphire Dragon</td>
-                <td style="border: 2px solid #0A5D93; text-align: center;">Gem Dragon</td>
+            <tr id="emerald-row">
+                <td><img src="images/emerald-dragon.png" width="100" height="100" alt="Emerald"></td>
+                <td>Emerald Dragon</td>
+                <td>Gem Dragon</td>
             </tr>
-            <tr style="color:#99A4D2; background-color:#241743; font-size:15px;">
-                <td style="border: 2px solid #897B9D; text-align: center;"><img src="amethyst-dragon.png" width="100" height="100" alt="Amethyst"></td>
-                <td style="border: 2px solid #897B9D; text-align: center;">Amethyst Dragon</td>
-                <td style="border: 2px solid #897B9D; text-align: center;">Gem Dragon</td>
+            <tr id="crystal-row">
+                <td><img src="images/crystal-dragon.png" width="100" height="100" alt="Crystal"></td>
+                <td>Crystal Dragon</td>
+                <td>Gem Dragon</td>
             </tr>
-            <tr style="color:#D78B59; background-color:#552221; font-size:15px;">
-                <td style="border: 2px solid #BC432F; text-align: center;"><img src="chromatic-red-dragon.png" width="100" height="100" alt="Red"></td>
-                <td style="border: 2px solid #BC432F; text-align: center;">Red Dragon</td>
-                <td style="border: 2px solid #BC432F; text-align: center;">Chromatic Dragon</td>
+            <tr id="sapphire-row">
+                <td><img src="images/sapphire-dragon.png" width="100" height="100" alt="Sapphire"></td>
+                <td>Sapphire Dragon</td>
+                <td>Gem Dragon</td>
             </tr>
-            <tr style="color:#B3BDBE; background-color:#222627; font-size:15px;">
-                <td style="border: 2px solid #7E7E7D; text-align: center;"><img src="chromatic-black-dragon.png" width="100" height="100" alt="Black"></td>
-                <td style="border: 2px solid #7E7E7D; text-align: center;">Black Dragon</td>
-                <td style="border: 2px solid #7E7E7D; text-align: center;">Chromatic Dragon</td>
+            <tr id="amethyst-row">
+                <td><img src="images/amethyst-dragon.png" width="100" height="100" alt="Amethyst"></td>
+                <td>Amethyst Dragon</td>
+                <td>Gem Dragon</td>
             </tr>
-            <tr style="color:#99B8D9; background-color:#274769; font-size:15px;">
-                <td style="border: 2px solid #5084BE; text-align: center;"><img src="chromatic-blue-dragon.png" width="100" height="100" alt="Blue"></td>
-                <td style="border: 2px solid #5084BE; text-align: center;">Blue Dragon</td>
-                <td style="border: 2px solid #5084BE; text-align: center;">Chromatic Dragon</td>
+            <tr id="red-row">
+                <td><img src="images/chromatic-red-dragon.png" width="100" height="100" alt="Red"></td>
+                <td>Red Dragon</td>
+                <td>Chromatic Dragon</td>
             </tr>
-            <tr style="color:#BCC47B; background-color:#222809; font-size:15px;">
-                <td style="border: 2px solid #5C6928; text-align: center;"><img src="chromatic-green-dragon.png" width="100" height="100" alt="Green"></td>
-                <td style="border: 2px solid #5C6928; text-align: center;">Green Dragon</td>
-                <td style="border: 2px solid #5C6928; text-align: center;">Chromatic Dragon</td>
+            <tr id="black-row">
+                <td><img src="images/chromatic-black-dragon.png" width="100" height="100" alt="Black"></td>
+                <td>Black Dragon</td>
+                <td>Chromatic Dragon</td>
             </tr>
-            <tr style="color:#7F5739; background-color:#372209; font-size:15px;">
-                <td style="border: 2px solid #7F5739; text-align: center;"><img src="chromatic-brown-dragon.png" width="100" height="100" alt="Brown"></td>
-                <td style="border: 2px solid #7F5739; text-align: center;">Brown Dragon</td>
-                <td style="border: 2px solid #7F5739; text-align: center;">Chromatic Dragon</td>
+            <tr id="blue-row">
+                <td><img src="images/chromatic-blue-dragon.png" width="100" height="100" alt="Blue"></td>
+                <td>Blue Dragon</td>
+                <td>Chromatic Dragon</td>
             </tr>
-            <tr style="color:#CED6DA; background-color:#2D353D; font-size:15px;">
-                <td style="border: 2px solid #4B535A; text-align: center;"><img src="chromatic-gray-dragon.png" width="100" height="100" alt="Grey"></td>
-                <td style="border: 2px solid #4B535A; text-align: center;">Grey Dragon</td>
-                <td style="border: 2px solid #4B535A; text-align: center;">Chromatic Dragon</td>
+            <tr id="green-row">
+                <td><img src="images/chromatic-green-dragon.png" width="100" height="100" alt="Green"></td>
+                <td>Green Dragon</td>
+                <td>Chromatic Dragon</td>
             </tr>
-            <tr style="color:#D7D7C9; background-color:#44403A; font-size:15px;">
-                <td style="border: 2px solid #72766B; text-align: center;"><img src="chromatic-deep-dragon.png" width="100" height="100" alt="Deep"></td>
-                <td style="border: 2px solid #72766B; text-align: center;">Deep Dragon</td>
-                <td style="border: 2px solid #72766B; text-align: center;">Chromatic Dragon</td>
+            <tr id="brown-row">
+                <td><img src="images/chromatic-brown-dragon.png" width="100" height="100" alt="Brown"></td>
+                <td>Brown Dragon</td>
+                <td>Chromatic Dragon</td>
             </tr>
-            <tr style="color:#A2D6E9; background-color:#2B3186; font-size:15px;">
-                <td style="border: 2px solid #9D98C3; text-align: center;"><img src="chromatic-purple-dragon.png" width="100" height="100" alt="Purple"></td>
-                <td style="border: 2px solid #9D98C3; text-align: center;">Purple Dragon</td>
-                <td style="border: 2px solid #9D98C3; text-align: center;">Chromatic Dragon</td>
+            <tr id="grey-row">
+                <td><img src="images/chromatic-gray-dragon.png" width="100" height="100" alt="Grey"></td>
+                <td>Grey Dragon</td>
+                <td>Chromatic Dragon</td>
             </tr>
-            <tr style="color:#E5E8E3; background-color:#9497A1; font-size:15px;">
-                <td style="border: 2px solid #E0E1DD; text-align: center;"><img src="chromatic-white-dragon.png" width="100" height="100" alt="White"></td>
-                <td style="border: 2px solid #E0E1DD; text-align: center;">White Dragon</td>
-                <td style="border: 2px solid #E0E1DD; text-align: center;">Chromatic Dragon</td>
+            <tr id="deep-row">
+                <td><img src="images/chromatic-deep-dragon.png" width="100" height="100" alt="Deep"></td>
+                <td>Deep Dragon</td>
+                <td>Chromatic Dragon</td>
+            </tr>
+            <tr id="purple-row">
+                <td><img src="images/chromatic-purple-dragon.png" width="100" height="100" alt="Purple"></td>
+                <td>Purple Dragon</td>
+                <td>Chromatic Dragon</td>
+            </tr>
+            <tr id="white-row">
+                <td><img src="images/chromatic-white-dragon.png" width="100" height="100" alt="White"></td>
+                <td>White Dragon</td>
+                <td>Chromatic Dragon</td>
             </tr>
         </tbody>
     </table>
