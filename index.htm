@@ -1,117 +1,12 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     
     <title>Website</title>
-    <style>
-        /* 1. Reset Body Spacing */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
 
-        /* 2. Header Box (Full Width) */
-        #header-box {
-            background-color: lightblue;
-            width: 100%;
-            height: 250px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        h1 {
-            font-size: 52px;
-            font-family: courier, monospace;
-            text-align: center;
-            color: black;
-            margin: 0;
-        }
-
-        /* 3. Navigation Bar */
-        ul.nav-bar {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            background-color: #333333;
-            display: flex;
-            justify-content: center;
-        }
-
-        ul.nav-bar li a {
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 18px 24px;
-            text-decoration: none;
-            cursor: pointer;
-            font-size: 20px;
-            font-weight: bold;
-        }
-
-        ul.nav-bar li a:hover {
-            background-color: #111111;
-        }
-
-        /* 4. Panel Styles (Hidden by default) */
-        .panel {
-            display: none;
-            padding: 40px;
-            text-align: center;
-            background-color: #333333; 
-            color: white;
-            border-bottom: 5px solid #a6d8a8;
-        }
-        
-        /* Containers for content outside the panels */
-        .main-page-content {
-            display: none;
-            margin: 40px auto;
-            width: 90%;
-            max-width: 1200px;
-            color: black;
-        }
-
-        .game-container {
-            display: none;
-            margin: 40px auto;
-            max-width: 500px; /* Matches the iframe widths */
-        }
-
-        /* Dragon Table Styles */
-        table, th, td {
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 12px;
-            text-align: left;
-        }
-
-        /* Alignments List Formatting */
-        .alignment-list {
-            list-style-type: none;
-            padding: 0;
-        }
-        .alignment-list dt {
-            font-weight: bold;
-            font-size: 18px;
-            margin-top: 15px;
-        }
-        .alignment-list dd {
-            margin-left: 20px;
-            margin-bottom: 15px;
-            color: #333;
-        }
-        
-        /* Centering style for the YouTube video */
-        .video-container {
-            text-align: center;
-            margin: 40px auto;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body style="background-color:#F0F8FF;">
 
@@ -203,97 +98,135 @@
         </thead>
         <tbody>
             <tr style="color:#AE8A59; background-color:#4C2F1D; font-size:15px;">
-                <td style="border: 2px solid #864623; text-align: center;"><img src="brass-metallic-dragon.png" width="100" height="100" alt="Brass"></td>
+                <td style="border: 2px solid #864623; text-align: center;">
+                    <img id="dragon-brass" src="brass-metallic-dragon.png" width="100" height="100" alt="Brass" onclick="clickDragon('Brass Dragon', 'Sleep')">
+                </td>
                 <td style="border: 2px solid #864623; text-align: center;">Brass Dragon</td>
                 <td style="border: 2px solid #864623; text-align: center;">Metallic Dragon</td>
             </tr>
             <tr style="color:#A2A5A8; background-color:#472023; font-size:15px;">
-                <td style="border: 2px solid #74291F; text-align: center;"><img src="copper-metallic-dragon.png" width="100" height="100" alt="Copper"></td>
+                <td style="border: 2px solid #74291F; text-align: center;">
+                    <img id="dragon-copper" src="copper-metallic-dragon.png" width="100" height="100" alt="Copper" onclick="clickDragon('Copper Dragon', 'Slowing')">
+                </td>
                 <td style="border: 2px solid #74291F; text-align: center;">Copper Dragon</td>
                 <td style="border: 2px solid #74291F; text-align: center;">Metallic Dragon</td>
             </tr>
             <tr style="color:#EDD183; background-color:#583D29; font-size:15px;">
-                <td style="border: 2px solid #A08260; text-align: center;"><img src="bronze-metallic-dragon.png" width="100" height="100" alt="Bronze"></td>
+                <td style="border: 2px solid #A08260; text-align: center;">
+                    <img id="dragon-bronze" src="bronze-metallic-dragon.png" width="100" height="100" alt="Bronze" onclick="clickDragon('Bronze Dragon', 'Repulsion')">
+                </td>
                 <td style="border: 2px solid #A08260; text-align: center;">Bronze Dragon</td>
                 <td style="border: 2px solid #A08260; text-align: center;">Metallic Dragon</td>
             </tr>
             <tr style="color:#F0D94C; background-color:#AD6124; font-size:15px;">
-                <td style="border: 2px solid #BA9B34; text-align: center;"><img src="gold-metallic-dragon.png" width="100" height="100" alt="Gold"></td>
+                <td style="border: 2px solid #BA9B34; text-align: center;">
+                    <img id="dragon-gold" src="gold-metallic-dragon.png" width="100" height="100" alt="Gold" onclick="clickDragon('Gold Dragon', 'Weakening')">
+                </td>
                 <td style="border: 2px solid #BA9B34; text-align: center;">Gold Dragon</td>
                 <td style="border: 2px solid #BA9B34; text-align: center;">Metallic Neutral</td>
             </tr>
             <tr style="color:#E1E4C1; background-color:#E69739; font-size:15px;">
-                <td style="border: 2px solid #FFD28F; text-align: center;"><img src="topaz-dragon.png" width="100" height="100" alt="Topaz"></td>
+                <td style="border: 2px solid #FFD28F; text-align: center;">
+                    <img id="dragon-topaz" src="topaz-dragon.png" width="100" height="100" alt="Topaz" onclick="clickDragon('Topaz Dragon', 'Necrotic (Desiccating)')">
+                </td>
                 <td style="border: 2px solid #FFD28F; text-align: center;">Topaz Dragon</td>
                 <td style="border: 2px solid #FFD28F; text-align: center;">Gem Dragon</td>
             </tr>
             <tr style="color:#CDD0D3; background-color:#707E89; font-size:15px;">
-                <td style="border: 2px solid #B3B3AE; text-align: center;"><img src="silver-metallic-dragon.png" width="100" height="100" alt="Silver"></td>
+                <td style="border: 2px solid #B3B3AE; text-align: center;">
+                    <img id="dragon-silver" src="silver-metallic-dragon.png" width="100" height="100" alt="Silver" onclick="clickDragon('Silver Dragon', 'Paralysis')">
+                </td>
                 <td style="border: 2px solid #B3B3AE; text-align: center;">Silver Dragon</td>
                 <td style="border: 2px solid #B3B3AE; text-align: center;">Metallic Dragon</td>
             </tr>
             <tr style="color:#999A5A; background-color:#49623C; font-size:15px;">
-                <td style="border: 2px solid #659D5D; text-align: center;"><img src="emerald-dragon.png" width="100" height="100" alt="Emerald"></td>
+                <td style="border: 2px solid #659D5D; text-align: center;">
+                    <img id="dragon-emerald" src="emerald-dragon.png" width="100" height="100" alt="Emerald" onclick="clickDragon('Emerald Dragon', 'Psychic')">
+                </td>
                 <td style="border: 2px solid #659D5D; text-align: center;">Emerald Dragon</td>
                 <td style="border: 2px solid #659D5D; text-align: center;">Gem Dragon</td>
             </tr>
             <tr style="color:#AA9470; background-color:#402C0E; font-size:15px;">
-                <td style="border: 2px solid #735830; text-align: center;"><img src="crystal-dragon.png" width="100" height="100" alt="Crystal"></td>
+                <td style="border: 2px solid #735830; text-align: center;">
+                    <img id="dragon-crystal" src="crystal-dragon.png" width="100" height="100" alt="Crystal" onclick="clickDragon('Crystal Dragon', 'Radiant')">
+                </td>
                 <td style="border: 2px solid #735830; text-align: center;">Crystal Dragon</td>
                 <td style="border: 2px solid #735830; text-align: center;">Gem Dragon</td>
             </tr>
             <tr style="color:#659CC6; background-color:#162148; font-size:15px;">
-                <td style="border: 2px solid #0A5D93; text-align: center;"><img src="sapphire-dragon.png" width="100" height="100" alt="Sapphire"></td>
+                <td style="border: 2px solid #0A5D93; text-align: center;">
+                    <img id="dragon-sapphire" src="sapphire-dragon.png" width="100" height="100" alt="Sapphire" onclick="clickDragon('Sapphire Dragon', 'Sonic')">
+                </td>
                 <td style="border: 2px solid #0A5D93; text-align: center;">Sapphire Dragon</td>
                 <td style="border: 2px solid #0A5D93; text-align: center;">Gem Dragon</td>
             </tr>
             <tr style="color:#99A4D2; background-color:#241743; font-size:15px;">
-                <td style="border: 2px solid #897B9D; text-align: center;"><img src="amethyst-dragon.png" width="100" height="100" alt="Amethyst"></td>
+                <td style="border: 2px solid #897B9D; text-align: center;">
+                    <img id="dragon-amethyst" src="amethyst-dragon.png" width="100" height="100" alt="Amethyst" onclick="clickDragon('Amethyst Dragon', 'Force')">
+                </td>
                 <td style="border: 2px solid #897B9D; text-align: center;">Amethyst Dragon</td>
                 <td style="border: 2px solid #897B9D; text-align: center;">Gem Dragon</td>
             </tr>
             <tr style="color:#D78B59; background-color:#552221; font-size:15px;">
-                <td style="border: 2px solid #BC432F; text-align: center;"><img src="chromatic-red-dragon.png" width="100" height="100" alt="Red"></td>
+                <td style="border: 2px solid #BC432F; text-align: center;">
+                    <img id="dragon-red" src="chromatic-red-dragon.png" width="100" height="100" alt="Red" onclick="clickDragon('Red Dragon', 'Fire')">
+                </td>
                 <td style="border: 2px solid #BC432F; text-align: center;">Red Dragon</td>
                 <td style="border: 2px solid #BC432F; text-align: center;">Chromatic Dragon</td>
             </tr>
             <tr style="color:#B3BDBE; background-color:#222627; font-size:15px;">
-                <td style="border: 2px solid #7E7E7D; text-align: center;"><img src="chromatic-black-dragon.png" width="100" height="100" alt="Black"></td>
+                <td style="border: 2px solid #7E7E7D; text-align: center;">
+                    <img id="dragon-black" src="chromatic-black-dragon.png" width="100" height="100" alt="Black" onclick="clickDragon('Black Dragon', 'Acid')">
+                </td>
                 <td style="border: 2px solid #7E7E7D; text-align: center;">Black Dragon</td>
                 <td style="border: 2px solid #7E7E7D; text-align: center;">Chromatic Dragon</td>
             </tr>
             <tr style="color:#99B8D9; background-color:#274769; font-size:15px;">
-                <td style="border: 2px solid #5084BE; text-align: center;"><img src="chromatic-blue-dragon.png" width="100" height="100" alt="Blue"></td>
+                <td style="border: 2px solid #5084BE; text-align: center;">
+                    <img id="dragon-blue" src="chromatic-blue-dragon.png" width="100" height="100" alt="Blue" onclick="clickDragon('Blue Dragon', 'Lightning')">
+                </td>
                 <td style="border: 2px solid #5084BE; text-align: center;">Blue Dragon</td>
                 <td style="border: 2px solid #5084BE; text-align: center;">Chromatic Dragon</td>
             </tr>
             <tr style="color:#BCC47B; background-color:#222809; font-size:15px;">
-                <td style="border: 2px solid #5C6928; text-align: center;"><img src="chromatic-green-dragon.png" width="100" height="100" alt="Green"></td>
+                <td style="border: 2px solid #5C6928; text-align: center;">
+                    <img id="dragon-green" src="chromatic-green-dragon.png" width="100" height="100" alt="Green" onclick="clickDragon('Green Dragon', 'Poison')">
+                </td>
                 <td style="border: 2px solid #5C6928; text-align: center;">Green Dragon</td>
                 <td style="border: 2px solid #5C6928; text-align: center;">Chromatic Dragon</td>
             </tr>
             <tr style="color:#7F5739; background-color:#372209; font-size:15px;">
-                <td style="border: 2px solid #7F5739; text-align: center;"><img src="chromatic-brown-dragon.png" width="100" height="100" alt="Brown"></td>
+                <td style="border: 2px solid #7F5739; text-align: center;">
+                    <img id="dragon-brown" src="chromatic-brown-dragon.png" width="100" height="100" alt="Brown" onclick="clickDragon('Brown Dragon', 'Blinding Sand')">
+                </td>
                 <td style="border: 2px solid #7F5739; text-align: center;">Brown Dragon</td>
                 <td style="border: 2px solid #7F5739; text-align: center;">Chromatic Dragon</td>
             </tr>
             <tr style="color:#CED6DA; background-color:#2D353D; font-size:15px;">
-                <td style="border: 2px solid #4B535A; text-align: center;"><img src="chromatic-gray-dragon.png" width="100" height="100" alt="Grey"></td>
+                <td style="border: 2px solid #4B535A; text-align: center;">
+                    <img id="dragon-grey" src="chromatic-gray-dragon.png" width="100" height="100" alt="Grey" onclick="clickDragon('Grey Dragon', 'Acidic Ooze')">
+                </td>
                 <td style="border: 2px solid #4B535A; text-align: center;">Grey Dragon</td>
                 <td style="border: 2px solid #4B535A; text-align: center;">Chromatic Dragon</td>
             </tr>
             <tr style="color:#D7D7C9; background-color:#44403A; font-size:15px;">
-                <td style="border: 2px solid #72766B; text-align: center;"><img src="chromatic-deep-dragon.png" width="100" height="100" alt="Deep"></td>
+                <td style="border: 2px solid #72766B; text-align: center;">
+                    <img id="dragon-deep" src="chromatic-deep-dragon.png" width="100" height="100" alt="Deep" onclick="clickDragon('Deep Dragon', 'Flesh-warping Gas')">
+                </td>
                 <td style="border: 2px solid #72766B; text-align: center;">Deep Dragon</td>
                 <td style="border: 2px solid #72766B; text-align: center;">Chromatic Dragon</td>
             </tr>
             <tr style="color:#A2D6E9; background-color:#2B3186; font-size:15px;">
-                <td style="border: 2px solid #9D98C3; text-align: center;"><img src="chromatic-purple-dragon.png" width="100" height="100" alt="Purple"></td>
+                <td style="border: 2px solid #9D98C3; text-align: center;">
+                    <img id="dragon-purple" src="chromatic-purple-dragon.png" width="100" height="100" alt="Purple" onclick="clickDragon('Purple Dragon', 'Energy Blade')">
+                </td>
                 <td style="border: 2px solid #9D98C3; text-align: center;">Purple Dragon</td>
                 <td style="border: 2px solid #9D98C3; text-align: center;">Chromatic Dragon</td>
             </tr>
             <tr style="color:#E5E8E3; background-color:#9497A1; font-size:15px;">
-                <td style="border: 2px solid #E0E1DD; text-align: center;"><img src="chromatic-white-dragon.png" width="100" height="100" alt="White"></td>
+                <td style="border: 2px solid #E0E1DD; text-align: center;">
+                    <img id="dragon-white" src="chromatic-white-dragon.png" width="100" height="100" alt="White" onclick="clickDragon('White Dragon', 'Freezing Cold Ice')">
+                </td>
                 <td style="border: 2px solid #E0E1DD; text-align: center;">White Dragon</td>
                 <td style="border: 2px solid #E0E1DD; text-align: center;">Chromatic Dragon</td>
             </tr>
@@ -339,7 +272,10 @@
 
 
 <script>
-    // Handles changing between the website tabs/panels
+    function clickDragon(dragonName, attackType) {
+        alert(dragonName + " unleashes a devastating breath weapon attack of: " + attackType + "!");
+    }
+
     function showPanel(panelId) {
         var panels = document.getElementsByClassName("panel");
         for (var i = 0; i < panels.length; i++) {
@@ -347,7 +283,6 @@
         }
         document.getElementById(panelId).style.display = "block";
         
-        // Hide standalone main-page elements when navigating away
         if (panelId !== 'dragons') {
             document.getElementById("dragonTableContainer").style.display = "none";
             document.getElementById("alignmentsContainer").style.display = "none";
@@ -359,13 +294,11 @@
         }
     }
 
-    // Toggles your Scratch iframe on and off
     function toggleScratchGame() {
         var scratchBox = document.getElementById("scratchContainer");
         var flappyBox = document.getElementById("FlappyContainer");
         var dancerBox = document.getElementById("DancerContainer");
         
-        // Hide the other games
         flappyBox.style.display = "none";
         dancerBox.style.display = "none";
         
@@ -376,13 +309,11 @@
         }
     }
 
-    // Toggles your Code.org Flappy Bird iframe on and off
     function toggleFlappybirdGame() {
         var scratchBox = document.getElementById("scratchContainer");
         var flappyBox = document.getElementById("FlappyContainer");
         var dancerBox = document.getElementById("DancerContainer");
         
-        // Hide the other games
         scratchBox.style.display = "none";
         dancerBox.style.display = "none";
         
@@ -393,13 +324,11 @@
         }
     }
 
-    // Toggles your Code.org Dancer iframe on and off
     function toggleDancerGame() {
         var scratchBox = document.getElementById("scratchContainer");
         var flappyBox = document.getElementById("FlappyContainer");
         var dancerBox = document.getElementById("DancerContainer");
            
-        // Hide the other games
         scratchBox.style.display = "none";  
         flappyBox.style.display = "none";
 
@@ -410,7 +339,6 @@
         }
     }
 
-    // Toggles the Dragon Table open and closed
     function toggleTableofDragons() {
         var tableContainer = document.getElementById("dragonTableContainer");
         if (tableContainer.style.display === "none" || tableContainer.style.display === "") {
@@ -420,7 +348,6 @@
         }
     }
 
-    // Toggles the Alignments list layout open and closed
     function toggleAlignments() {
         var alignmentsBox = document.getElementById("alignmentsContainer");
         if (alignmentsBox.style.display === "none" || alignmentsBox.style.display === "") {
@@ -437,3 +364,4 @@
 
 </body>
 </html>
+
