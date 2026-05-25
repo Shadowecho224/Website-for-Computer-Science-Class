@@ -1,11 +1,15 @@
-/* 1. Reset Body Spacing */
+/* ==========================================================================
+   1. Core Website Layout Styles
+   ========================================================================== */
+
+/* Reset Body Spacing */
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
 }
 
-/* 2. Header Box (Full Width) */
+/* Header Box (Full Width) */
 #header-box {
     background-color: lightblue;
     width: 100%;
@@ -23,7 +27,7 @@ h1 {
     margin: 0;
 }
 
-/* 3. Navigation Bar */
+/* Navigation Bar */
 ul.nav-bar {
     list-style-type: none;
     margin: 0;
@@ -48,7 +52,7 @@ ul.nav-bar li a:hover {
     background-color: #111111;
 }
 
-/* 4. Panel Styles (Hidden by default) */
+/* Panel Styles (Hidden by default) */
 .panel {
     display: none;
     padding: 40px;
@@ -70,10 +74,10 @@ ul.nav-bar li a:hover {
 .game-container {
     display: none;
     margin: 40px auto;
-    max-width: 500px; /* Matches the iframe widths */
+    max-width: 500px;
 }
 
-/* Dragon Table Styles */
+/* Dragon Table Layout */
 table, th, td {
     border-collapse: collapse;
 }
@@ -104,44 +108,125 @@ th, td {
     margin: 40px auto;
 }
 
-/* =======================================
-   5. SEPARATE IMAGE STYLING RULES
-   ======================================= */
 
-/* General settings for ALL table images */
+/* ==========================================================================
+   2. Global Table Image Rules (Applies to ALL 19 images)
+   ========================================================================== */
+
 table tbody img {
-    cursor: pointer;          /* Makes the cursor turn into a pointer hand on hover */
-    border-radius: 8px;       /* Gives soft rounded corners to images */
-    transition: transform 0.2s, box-shadow 0.2s; /* Smooth zoom animation setup */
+    cursor: pointer;           /* Makes the mouse cursor a clicking hand */
+    border-radius: 8px;        /* Softens corners into smooth squares */
+    box-sizing: border-box;    /* Keeps the 3px borders inside the 100x100 limits */
+    
+    /* Sets up a smooth 0.2 second zoom and glow effect when hovered over */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; 
 }
 
-/* When a user hovers over ANY image, make it grow larger */
+/* Hover Zoom Code: Automatically applies to every single image */
 table tbody img:hover {
-    transform: scale(1.15);   /* Increases size by 15% smoothly */
+    transform: scale(1.15);    /* Grows the image by 15% smoothly when hovered */
+    z-index: 10;               /* Ensures the zoomed image sits on top of table borders */
 }
 
-/* Target individual separate image IDs to give them unique border glow effects */
+
+/* ==========================================================================
+   3. Separate Image Custom Codes (Unique styling per Dragon ID)
+   ========================================================================== */
+
+/* --- Metallic Dragons --- */
+#img-brass {
+    border: 3px solid #E1A95F;
+    box-shadow: 0 0 8px #E1A95F;
+}
+
+#img-copper {
+    border: 3px solid #D47A55;
+    box-shadow: 0 0 8px #D47A55;
+}
+
+#img-bronze {
+    border: 3px solid #CD7F32;
+    box-shadow: 0 0 8px #CD7F32;
+}
+
 #img-gold {
     border: 3px solid #FFD700;
-    box-shadow: 0 0 10px #FFD700;
+    box-shadow: 0 0 12px #FFD700;
 }
 
 #img-silver {
     border: 3px solid #C0C0C0;
-    box-shadow: 0 0 10px #C0C0C0;
+    box-shadow: 0 0 12px #C0C0C0;
 }
 
-#img-red {
-    border: 3px solid #FF0000;
-    box-shadow: 0 0 10px #FF0000;
-}
-
-#img-blue {
-    border: 3px solid #0000FF;
-    box-shadow: 0 0 10px #0000FF;
+/* --- Gem Dragons --- */
+#img-topaz {
+    border: 3px solid #FFC87C;
+    box-shadow: 0 0 10px #FFC87C;
 }
 
 #img-emerald {
     border: 3px solid #50C878;
     box-shadow: 0 0 10px #50C878;
+}
+
+#img-crystal {
+    border: 3px solid #E0F7FA;
+    box-shadow: 0 0 12px #E0F7FA;
+}
+
+#img-sapphire {
+    border: 3px solid #0F52BA;
+    box-shadow: 0 0 10px #0F52BA;
+}
+
+#img-amethyst {
+    border: 3px solid #9966CC;
+    box-shadow: 0 0 10px #9966CC;
+}
+
+/* --- Chromatic Dragons --- */
+#img-red {
+    border: 3px solid #FF0000;
+    box-shadow: 0 0 12px #FF0000;
+}
+
+#img-black {
+    border: 3px solid #444444;
+    box-shadow: 0 0 8px #222222;
+}
+
+#img-blue {
+    border: 3px solid #0000FF;
+    box-shadow: 0 0 12px #0000FF;
+}
+
+#img-green {
+    border: 3px solid #00FF00;
+    box-shadow: 0 0 10px #00FF00;
+}
+
+#img-brown {
+    border: 3px solid #8B4513;
+    box-shadow: 0 0 8px #8B4513;
+}
+
+#img-grey {
+    border: 3px solid #808080;
+    box-shadow: 0 0 8px #808080;
+}
+
+#img-deep {
+    border: 3px solid #4B0082;
+    box-shadow: 0 0 10px #4B0082;
+}
+
+#img-purple {
+    border: 3px solid #8A2BE2;
+    box-shadow: 0 0 10px #8A2BE2;
+}
+
+#img-white {
+    border: 3px solid #FFFFFF;
+    box-shadow: 0 0 12px #FFFFFF;
 }
