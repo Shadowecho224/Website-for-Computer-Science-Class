@@ -22,14 +22,87 @@ h1 {
     color: black;
     margin: 0;
 }
-/* This code only affects the Brass Dragon image */
-#brass-dragon-img {
-    border: 3px solid gold;
-    filter: drop-shadow(0px 0px 10px yellow);
+/* General Table Settings to keep it centered and clean */
+table {
+    background-color: black;
+    border-collapse: collapse;
 }
 
-/* This code only affects the Copper Dragon image */
-#copper-dragon-img {
-    border: 3px solid #b87333;
+table th {
+    color: white;
+    font-size: 18px;
+    border: 2px solid black;
+    text-align: left;
+    padding: 12px;
 }
 
+table td {
+    padding: 12px;
+    text-align: center;
+    font-size: 15px;
+}
+
+/* --- SEPARATE CUSTOM DESIGNS FOR EACH DRAGON ROW --- */
+
+#brass-row { color: #AE8A59; background-color: #4C2F1D; }
+#brass-row td { border: 2px solid #864623; }
+
+#copper-row { color: #A2A5A8; background-color: #472023; }
+#copper-row td { border: 2px solid #74291F; }
+
+#bronze-row { color: #EDD183; background-color: #583D29; }
+#bronze-row td { border: 2px solid #A08260; }
+
+#gold-row { color: #F0D94C; background-color: #AD6124; }
+#gold-row td { border: 2px solid #BA9B34; }
+
+#topaz-row { color: #E1E4C1; background-color: #E69739; }
+#topaz-row td { border: 2px solid #FFD28F; }
+
+#silver-row { color: #CDD0D3; background-color: #707E89; }
+#silver-row td { border: 2px solid #B3B3AE; }
+
+#emerald-row { color: #999A5A; background-color: #49623C; }
+#emerald-row td { border: 2px solid #659D5D; }
+
+#crystal-row { color: #AA9470; background-color: #402C0E; }
+#crystal-row td { border: 2px solid #735830; }
+
+#sapphire-row { color: #659CC6; background-color: #162148; }
+#sapphire-row td { border: 2px solid #0A5D93; }
+
+#amethyst-row { color: #99A4D2; background-color: #241743; }
+#amethyst-row td { border: 2px solid #897B9D; }
+
+#red-row { color: #D78B59; background-color: #552221; }
+#red-row td { border: 2px solid #BC432F; }
+
+#black-row { color: #B3BDBE; background-color: #222627; }
+#black-row td { border: 2px solid #7E7E7D; }
+
+#blue-row { color: #99B8D9; background-color: #274769; }
+#blue-row td { border: 2px solid #5084BE; }
+
+#green-row { color: #BCC47B; background-color: #222809; }
+#green-row td { border: 2px solid #5C6928; }
+
+#brown-row { color: #7F5739; background-color: #372209; }
+#brown-row td { border: 2px solid #7F5739; }
+
+#grey-row { color: #CED6DA; background-color: #2D353D; }
+#grey-row td { border: 2px solid #4B535A; }
+
+#deep-row { color: #D7D7C9; background-color: #44403A; }
+#deep-row td { border: 2px solid #72766B; }
+
+#purple-row { color: #A2D6E9; background-color: #2B3186; }
+#purple-row td { border: 2px solid #9D98C3; }
+
+#white-row { color: #E5E8E3; background-color: #9497A1; }
+#white-row td { border: 2px solid #E0E1DD; }
+
+/* Bonus Trick: Glow or curve borders around the images themselves! */
+table td img {
+    border-radius: 8px; /* Smooths the square corners of your images */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Adds a subtle drop shadow under each dragon picture */
+}
