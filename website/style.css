@@ -24,3 +24,10 @@ h1 {
 }
 
 /* ... include all the rest of your CSS rules here ... */
+
+/* This custom code will ONLY apply to the gold dragon image */
+#gold-dragon-pic {
+    border: 3px solid gold;
+    box-shadow: 0 0 10px gold;
+    filter: brightness(1.2);
+}
