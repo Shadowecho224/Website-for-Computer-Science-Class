@@ -49,9 +49,14 @@
     <p><a href="https://www.instagram.com" target="_blank">My Instagram</a></p>
 </div>
 
-<div id="about" class="panel">
-    <h2>About Me</h2>
-    <p style="text-align:left;">My name is Echo. I like to code, play dungeons and dragons and draw.</p>
+<div id="about" class="panel;">
+    <h1 style="color:white">About</h1>
+    <p style="text-align:left;">
+    <button type="button" style="font-size:20px;"onclick="toggleAbout()">
+      <b>About Me</b>
+    </button>
+</p>
+
 </div>
 
 <div id="games" class="panel">
@@ -234,7 +239,11 @@
     </table>
 </div>
 
-<div id="scratchContainer" class="game-container">
+    <div id="AboutContainer" class="main-page-content">
+    <h2 style="font-size:40px;">About Me</h2>
+    </div>
+        
+    <div id="scratchContainer" class="game-container">  
     <iframe 
       src="https://scratch.mit.edu/projects/1307013583/embed" 
       allowtransparency="true" 
@@ -356,6 +365,15 @@
             alignmentsBox.style.display = "none";
         }
     }
+        }
+
+    function toggleAbout() {
+        var alignmentsBox = document.getElementById("AboutContainer");
+        if (alignmentsBox.style.display === "none" || alignmentsBox.style.display === "") {
+            alignmentsBox.style.display = "block";
+        } else {
+            alignmentsBox.style.display = "none";
+        }
 </script>
 
 <div class="video-container">
