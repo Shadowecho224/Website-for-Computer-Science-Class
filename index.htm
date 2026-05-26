@@ -43,10 +43,13 @@
     </p>
 </div>
 
-<div id="contact" class="panel">
-    <h2>Contact</h2>
-    <p>Feel free to reach out via email or social media.</p>
-    <p><a href="https://www.instagram.com" target="_blank">My Instagram</a></p>
+<div id="about" class="panel">
+    <h2>About Me</h2>
+   <p style="text-align:left;">
+        <button type="button" style="font-size:20px;" onclick="toggleAbout()">
+            <b>About Me</b>
+        </button>
+  </p>
 </div>
 
     <div id="about" class="panel">
@@ -238,8 +241,9 @@
     </table>
 </div>
 
-    <div id="AboutContainer" class="main-page-content">
+<div id="AboutContainer" class="main-page-content">
     <h2 style="font-size:40px;">About Me</h2>
+     <p>My name is echo</p>
     </div>
         
     <div id="scratchContainer" class="game-container">  
@@ -366,12 +370,13 @@
     }
         }
 
+
     function toggleAbout() {
-        var alignmentsBox = document.getElementById("AboutContainer");
-        if (alignmentsBox.style.display === "none" || alignmentsBox.style.display === "") {
-            alignmentsBox.style.display = "block";
+        var aboutBox = document.getElementById("AboutContainer");
+        if (aboutBox.style.display === "none" || aboutBox.style.display === "") {
+            aboutBox.style.display = "block";
         } else {
-            alignmentsBox.style.display = "none";
+            aboutBox.style.display = "none";
         }
 </script>
 
