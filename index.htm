@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body style="background-color: #8D948D;">
-
 <div id="header-box">
     <h1>Welcome To My Website!<br>Bienvenue sur mon site Web!</h1>
 </div>
@@ -29,6 +28,7 @@
 
 <div id="dragons" class="panel">
     <h1 style="color:white">Dungeons and Dragons</h1>
+    <p></p>
     <p style="text-align:left;">
         <button type="button" style="font-size:20px;" onclick="toggleAlignments()">
             <b>DnD Alignments</b>
@@ -43,17 +43,19 @@
     </p>
 </div>
 
-<div id="about" class="panel">
-    <h2>About Me</h2>
-   <p style="text-align:left;">
-        <button type="button" style="font-size:20px;" onclick="toggleAbout()">
-            <b>About Me</b>
-        </button>
-  </p>
+<div id="contact" class="panel">
+    <h2>Contact</h2>
+    <p>Feel free to reach out via email or social media.</p>
+    <p><a href="https://ww.instagram.com">My Instagram</a></p>
 </div>
 
-    <div id="about" class="panel">
-    <h1 style="color:white">About</h1>
+<div id="about" class="panel">
+    <h2>About</h2>
+      <p style="text-align:left;">
+        <button type="button" style="font-size:20px;" onclick="toggleAboutMe()">
+            <b>About Me</b>
+        </button>
+    </p>
 </div>
 
 <div id="games" class="panel">
@@ -65,25 +67,48 @@
 </div>
 
 
+<div id="aboutMeContainer" class="main-page-content">
+    <h2 style="font-size:40px;">About Me</h2>
+    <dl class="alignment-list">
+        <dt>Name:</dt>
+        <dd>- Echo</dd>
+
+        <dt>Built With:</dt>
+        <dd>- Clean HTML5 structures, modern responsive CSS Flexbox styles, and interactive JavaScript functionality.</dd>
+
+        <dt>Features:</dt>
+        <dd>- Includes customized data tables, toggling panels, dynamically loaded sub-sections, and an interactive embedded Scratch game environment.</dd>
+    </dl>
+</div>
+
+
 <div id="alignmentsContainer" class="main-page-content">
     <h2 style="font-size:40px;">Dungeons and Dragons Alignments.</h2>
     <dl class="alignment-list">
         <dt>Lawful Good: (LG)</dt>
         <dd>-"The Crusader." Combines honor with compassion.</dd>
+
         <dt>Neutral Good (NG):</dt>
         <dd>-"The Benefactor." Guided by conscience to help others without strict adherence to law.</dd>
+
         <dt>Chaotic Good (CG):</dt>
         <dd>- "The Rebel." Follows their own conscience, disregarding established rules.</dd>
+
         <dt>Lawful Neutral (LN):</dt>
         <dd>- "The Judge." Values reliability, order, and tradition above all.</dd>
+
         <dt>True Neutral (N):</dt>
         <dd>-"The Undecided." Avoids extremes; may prioritize self, nature, or balance.</dd>
+
         <dt>Chaotic Neutral (CN):</dt>
         <dd>-"The Free Spirit." Values freedom above all, following whims and disregarding rules.</dd>
+
         <dt>Lawful Evil (LE):</dt>
         <dd>-"The Dominator." Uses orderly systems to serve selfish, malicious ends.</dd>
+
         <dt>Neutral Evil (NE):</dt>
         <dd>-"The Malefactor." Pure selfishness; acts without regard for others.</dd>
+
         <dt>Chaotic Evil (CE):</dt>
         <dd>-"The Destroyer." Driven by greed, hatred, and impulsiveness, caring only for oneself.</dd>
     </dl>
@@ -236,7 +261,7 @@
     </table>
 </div>
         
-    <div id="scratchContainer" class="game-container">  
+<div id="scratchContainer" class="game-container">  
     <iframe 
       src="https://scratch.mit.edu/projects/1307013583/embed" 
       allowtransparency="true" 
@@ -272,31 +297,58 @@
     </iframe>
 </div>
 
-
 <script>
-    function clickDragon(dragonName, attackType) {
-        alert(dragonName + " unleashes a devastating breath weapon attack of: " + attackType + "!");
-    }
-
+    // Handles changing between the website tabs/panels
     function showPanel(panelId) {
+        var targetPanel = document.getElementById(panelId);
+        
+        // If the clicked panel is already visible, hide it (go back up) and its contents
+        if (targetPanel.style.display === "block") {
+            targetPanel.style.display = "none";
+            
+            // Clean up standalone contents when pulling the parent panel back up
+            if (panelId === 'dragons') {
+                document.getElementById("dragonTableContainer").style.display = "none";
+                document.getElementById("alignmentsContainer").style.display = "none";
+            }
+            if (panelId === 'games') {
+                document.getElementById("scratchContainer").style.display = "none";
+            document.getElementById("FlappyContainer").style.display = "none";
+            document.getElementById("DancerContainer").style.display = "none";
+
+            }
+            if (panelId === 'about') {
+                document.getElementById("aboutMeContainer").style.display = "none";
+            }
+            return; // Stop the function here
+        }
+
+        // Otherwise, hide all panels first to prepare for the swap
         var panels = document.getElementsByClassName("panel");
         for (var i = 0; i < panels.length; i++) {
             panels[i].style.display = "none";
         }
-        document.getElementById(panelId).style.display = "block";
         
+        // Show the chosen panel
+        targetPanel.style.display = "block";
+        
+        // Hide standalone main-page elements when navigating away to unrelated tabs
         if (panelId !== 'dragons') {
             document.getElementById("dragonTableContainer").style.display = "none";
             document.getElementById("alignmentsContainer").style.display = "none";
         }
         if (panelId !== 'games') {
-            document.getElementById("scratchContainer").style.display = "none";
+             document.getElementById("scratchContainer").style.display = "none";
             document.getElementById("FlappyContainer").style.display = "none";
             document.getElementById("DancerContainer").style.display = "none";
+
+        }
+        if (panelId !== 'about') {
+            document.getElementById("aboutMeContainer").style.display = "none";
         }
     }
 
-    function toggleScratchGame() {
+ function toggleScratchGame() {
         var scratchBox = document.getElementById("scratchContainer");
         var flappyBox = document.getElementById("FlappyContainer");
         var dancerBox = document.getElementById("DancerContainer");
@@ -341,6 +393,7 @@
         }
     }
 
+    // Toggles the Dragon Table open and closed
     function toggleTableofDragons() {
         var tableContainer = document.getElementById("dragonTableContainer");
         if (tableContainer.style.display === "none" || tableContainer.style.display === "") {
@@ -350,6 +403,7 @@
         }
     }
 
+    // Toggles the Alignments list layout open and closed
     function toggleAlignments() {
         var alignmentsBox = document.getElementById("alignmentsContainer");
         if (alignmentsBox.style.display === "none" || alignmentsBox.style.display === "") {
@@ -358,9 +412,16 @@
             alignmentsBox.style.display = "none";
         }
     }
+
+    // Toggles the About Me section open and closed
+    function toggleAboutMe() {
+        var aboutBox = document.getElementById("aboutMeContainer");
+        if (aboutBox.style.display === "none" || aboutBox.style.display === "") {
+            aboutBox.style.display = "block";
+        } else {
+            aboutBox.style.display = "none";
         }
-    }
-    
+    };
 </script>
 
 <div class="video-container">
