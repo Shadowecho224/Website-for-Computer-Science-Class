@@ -54,11 +54,6 @@
 
     <div id="about" class="panel">
     <h1 style="color:white">About</h1>
-    <p style="text-align:left;">
-        <button type="button" style="font-size:20px;" onclick="toggleAbout()">
-            <b>About Me</b>
-        </button>
-    </p>
 </div>
 
 <div id="games" class="panel">
@@ -240,11 +235,6 @@
         </tbody>
     </table>
 </div>
-
-<div id="AboutContainer" class="main-page-content">
-    <h2 style="font-size:40px;">About Me</h2>
-     <p>My name is echo</p>
-    </div>
         
     <div id="scratchContainer" class="game-container">  
     <iframe 
@@ -369,15 +359,8 @@
         }
     }
         }
-
-
-    function toggleAbout() {
-        var aboutBox = document.getElementById("AboutContainer");
-        if (aboutBox.style.display === "none" || aboutBox.style.display === "") {
-            aboutBox.style.display = "block";
-        } else {
-            aboutBox.style.display = "none";
-        }
+    }
+    
 </script>
 
 <div class="video-container">
