@@ -1,2 +1,2 @@
-# Welcome to My Website (H1)
-# Bienvenue sur mon site Web! (H1)
+# Welcome to My Website
+# Bienvenue sur mon site Web!
